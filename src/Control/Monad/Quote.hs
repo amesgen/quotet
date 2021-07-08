@@ -3,11 +3,11 @@
 -- The ["Overloaded Quotations" proposal](https://github.com/ghc-proposals/ghc-proposals/blob/master/proposals/0246-overloaded-bracket.rst)
 -- has been implemented in GHC 9.0, and generalizes the type of quotation brackets from
 --
--- @[| \x -> x + 1 |] ::            'Language.Haskell.TH.Q' 'Language.Haskell.TH.Exp'@
+-- @[| \\x -> x + 1 |] ::            'Language.Haskell.TH.Q' 'Language.Haskell.TH.Exp'@
 --
 -- to
 --
--- @[| \x -> x + 1 |] :: 'Quote' m => m 'Language.Haskell.TH.Exp'@
+-- @[| \\x -> x + 1 |] :: 'Quote' m => m 'Language.Haskell.TH.Exp'@
 --
 -- where the 'Quote' type class only has a single function, 'newName', in order to generate
 -- fresh 'Language.Haskell.TH.Name's.

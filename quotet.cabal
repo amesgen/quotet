@@ -1,6 +1,6 @@
 cabal-version: 2.4
 name: quotet
-version: 0.0.0.1
+version: 0.0.1.0
 
 synopsis: Monad transformer for Quote from template-haskell
 description:
@@ -49,7 +49,7 @@ library
     Control.Monad.Quote.Internal
   build-depends:
       base >= 4.14 && < 5
-    , template-haskell >= 2.16 && < 2.18
+    , template-haskell >= 2.16 && < 2.19
     , th-compat >= 0.1.2
     , mtl ^>= 2.2
   if flag(exceptions)

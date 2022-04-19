@@ -1,5 +1,10 @@
 # Revision history for quotet
 
+## 0.0.1.0 -- 2022-04-20
+
+* Support GHC 9.2.
+* Disable `exceptions` flag by default.
+
 ## 0.0.0.1 -- 2021-07-08
 
 * Documentation fixes.

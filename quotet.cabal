@@ -22,7 +22,7 @@ source-repository head
 
 flag exceptions
   description: Support instances from exceptions
-  default: True
+  default: False
   manual: True
 
 flag semigroupoids

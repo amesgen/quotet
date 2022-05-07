@@ -1,5 +1,9 @@
 # Revision history for quotet
 
+## 0.0.1.1 -- 2022-05-08
+
+* Support mtl 2.3.
+
 ## 0.0.1.0 -- 2022-04-20
 
 * Support GHC 9.2.

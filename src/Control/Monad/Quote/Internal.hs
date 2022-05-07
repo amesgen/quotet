@@ -9,8 +9,10 @@ module Control.Monad.Quote.Internal
 where
 
 import Control.Applicative
+import Control.Monad (MonadPlus (..))
 import Control.Monad.Cont.Class
 import Control.Monad.Error.Class
+import Control.Monad.Fix
 import Control.Monad.RWS.Class
 import Control.Monad.State.Strict
 import Language.Haskell.TH.Syntax (Uniq, mkNameU)

@@ -71,12 +71,12 @@ newtype QuoteT m a = QuoteT {unQuoteT :: StateT Uniq m a}
   deriving newtype (MonadBase b, MonadBaseControl b, MonadTransControl)
 #endif
 
-instance MonadState s m => MonadState s (QuoteT m) where
+instance (MonadState s m) => MonadState s (QuoteT m) where
   get = lift get
   put = lift . put
   state = lift . state
 
-instance Monad m => Quote (QuoteT m) where
+instance (Monad m) => Quote (QuoteT m) where
   newName s = QuoteT . state $ \i -> (mkNameU s i, i + 1)
 
 #ifdef MIN_VERSION_semigroupoids
@@ -97,5 +97,5 @@ instance Bind m => Bind (QuoteT m) where
 --  in exp
 -- :}
 -- LamE [VarP a_0] (InfixE (Just (VarE a_0)) (VarE GHC.Base.<>) (Just (LitE (StringL " world"))))
-runQuoteT :: Monad m => QuoteT m a -> m a
+runQuoteT :: (Monad m) => QuoteT m a -> m a
 runQuoteT = flip evalStateT 0 . unQuoteT

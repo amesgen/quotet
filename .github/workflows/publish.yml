@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: haskell/actions/setup@v2
+      - uses: haskell-actions/setup@v2
         with:
-          ghc-version: '8.10.7'
+          ghc-version: '9.2.8'
 
       - run: cabal check
       - run: cabal sdist

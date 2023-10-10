@@ -49,7 +49,7 @@ library
     Control.Monad.Quote.Internal
   build-depends:
       base >= 4.14 && < 5
-    , template-haskell >= 2.16 && < 2.21
+    , template-haskell >= 2.16 && < 2.22
     , th-compat >= 0.1.2
     , mtl >= 2.2 && < 2.4
   if flag(exceptions)
@@ -58,3 +58,4 @@ library
     build-depends: semigroupoids ^>= 5.3 || ^>= 6.0
   if flag(monad-control)
     build-depends: transformers-base ^>= 0.4, monad-control ^>= 1.0
+  x-docspec-options: -XFlexibleContexts -XTemplateHaskellQuotes
